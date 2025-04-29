@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.coil)
     implementation(libs.recyclerview)
+    implementation(libs.material.v1120)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
