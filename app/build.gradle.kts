@@ -1,7 +1,18 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
 }
+
+val localProperties = Properties().apply {
+    val localFile = rootProject.file("local.properties")
+    if (localFile.exists()) {
+        localFile.inputStream().use { load(it) }
+    }
+}
+
+val openAiApiKey = localProperties["OPENAI_API_KEY"] as String
 
 android {
     namespace = "com.example.ict4gs"
@@ -18,12 +29,16 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "OPENAI_API_KEY", "\"$openAiApiKey\"")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "OPENAI_API_KEY", "\"$openAiApiKey\"")
         }
     }
     compileOptions {
@@ -35,9 +50,9 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
-
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -54,6 +69,7 @@ dependencies {
     implementation(libs.coil)
     implementation(libs.recyclerview)
     implementation(libs.material.v1120)
+    implementation(libs.gson)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
