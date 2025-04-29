@@ -1,97 +1,132 @@
 package com.example.ict4gs.ui.chat
 
+import android.content.Context
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.example.ict4gs.BuildConfig
 import com.example.ict4gs.databinding.FragmentChatBinding
 import okhttp3.*
+import org.json.JSONArray
+import org.json.JSONObject
 import java.io.IOException
-import com.google.gson.Gson
-import com.example.ict4gs.BuildConfig
-import com.google.gson.annotations.SerializedName
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody.Companion.toRequestBody
+
 
 class ChatFragment : Fragment() {
     private var _binding: FragmentChatBinding? = null
     private val binding get() = _binding!!
     private val client = OkHttpClient()
-    private val gson = Gson()
-
     private val apiKey = BuildConfig.OPENAI_API_KEY
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentChatBinding.inflate(inflater, container, false)
+
         binding.sendButton.setOnClickListener {
-            val userMessage = binding.userInput.text.toString()
-            if (userMessage.isNotBlank()) {
-                appendMessage("You: $userMessage")
-                binding.userInput.setText("")
-                sendToLLM(userMessage)
+            sendUserMessage()
+        }
+
+        binding.userInput.setOnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_SEND ||
+                (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN)) {
+                sendUserMessage()
+                true
+            } else {
+                false
             }
         }
+
+
         return binding.root
+    }
+
+    private fun sendUserMessage() {
+        val userMessage = binding.userInput.text.toString().trim()
+        if (userMessage.isNotEmpty()) {
+            appendMessage("You: $userMessage")
+            binding.userInput.setText("")
+            hideKeyboard()
+            sendToLLM(userMessage)
+        }
+    }
+
+    private fun hideKeyboard() {
+        val imm = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(binding.userInput.windowToken, 0)
     }
 
     private fun appendMessage(message: String) {
         binding.chatHistory.append("$message\n\n")
-        binding.scrollView.post {
-            binding.scrollView.fullScroll(View.FOCUS_DOWN)
-        }
+        binding.scrollView.post { binding.scrollView.fullScroll(View.FOCUS_DOWN) }
     }
 
-    private fun sendToLLM(message: String) {
-        val requestBody = gson.toJson(
-            mapOf(
-                "model" to "gpt-3.5-turbo",
-                "messages" to listOf(
-                    mapOf("role" to "user", "content" to message)
-                )
-            )
-        )
+    private fun sendToLLM(userMessage: String) {
+        val client = OkHttpClient()
 
+        val json = JSONObject()
+        json.put("model", "gpt-3.5-turbo")
+        json.put("messages", JSONArray().apply {
+            put(JSONObject().put("role", "system").put("content", "You are a helpful autism advisor."))
+            put(JSONObject().put("role", "user").put("content", userMessage))
+        })
+
+        val requestBody = RequestBody.create("application/json".toMediaTypeOrNull(), json.toString())
         val request = Request.Builder()
             .url("https://api.openai.com/v1/chat/completions")
-            .addHeader("Authorization", "Bearer $apiKey")
-            .addHeader("Content-Type", "application/json")
-            .post(requestBody.toRequestBody("application/json".toMediaTypeOrNull()))
+            .addHeader("Authorization", "Bearer ${BuildConfig.OPENAI_API_KEY}")
+            .post(requestBody)
             .build()
 
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 requireActivity().runOnUiThread {
-                    appendMessage("Error: ${e.message}")
+                    appendMessage("Error: ${e.localizedMessage}")
                 }
             }
 
             override fun onResponse(call: Call, response: Response) {
-                response.body?.string()?.let { bodyString ->
-                    val completion = gson.fromJson(bodyString, CompletionResponse::class.java)
-                    val reply = completion.choices.firstOrNull()?.message?.content ?: "No reply"
+                if (!response.isSuccessful) {
                     requireActivity().runOnUiThread {
-                        appendMessage("LLM: $reply")
+                        appendMessage("Error: API call failed with code ${response.code}")
+                    }
+                    return
+                }
+
+                val responseBody = response.body?.string()
+                if (responseBody != null) {
+                    try {
+                        val content = JSONObject(responseBody)
+                            .getJSONArray("choices")
+                            .getJSONObject(0)
+                            .getJSONObject("message")
+                            .getString("content")
+
+                        requireActivity().runOnUiThread {
+                            appendMessage("Advisor: $content")
+                        }
+                    } catch (e: Exception) {
+                        requireActivity().runOnUiThread {
+                            appendMessage("Error: Could not parse response")
+                        }
+                    }
+                } else {
+                    requireActivity().runOnUiThread {
+                        appendMessage("Error: Empty response from API")
                     }
                 }
             }
         })
     }
 
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 }
-
-data class CompletionResponse(
-    val choices: List<Choice>
-)
-
-data class Choice(
-    val message: Message
-)
-
-data class Message(
-    val role: String,
-    val content: String
-)
