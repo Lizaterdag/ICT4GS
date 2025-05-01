@@ -17,5 +17,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         app:menu="@menu/bottom_nav_menu"
-        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior" /> <!-- ⭐ added -->
+        app:itemIconSize="40dp"
+        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
