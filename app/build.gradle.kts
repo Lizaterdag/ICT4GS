@@ -70,6 +70,7 @@ dependencies {
     implementation(libs.recyclerview)
     implementation(libs.material.v1120)
     implementation(libs.gson)
+    implementation(libs.core)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
