@@ -24,21 +24,18 @@ class AutismVideosActivity : AppCompatActivity() {
 
         youtubePlayerView1.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
-                // Put your first video ID here
                 youTubePlayer.cueVideo("TJuwhCIQQTs", 0f)
             }
         })
 
         youtubePlayerView2.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
-                // Put your second video ID here
                 youTubePlayer.cueVideo("WZrp44FWTOk", 0f)
             }
         })
 
         youtubePlayerView3.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
-                // Put your third video ID here
                 youTubePlayer.cueVideo("TYgfoWuwlvQ", 0f)
             }
         })
