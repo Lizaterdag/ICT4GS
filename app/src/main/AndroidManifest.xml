@@ -31,6 +31,14 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ICT4GS.NoActionBar" />
+
+        <activity android:name=".ui.training.AutismTestActivity"
+            android:theme="@style/Theme.ICT4GS"/>
+        <activity android:name=".ui.training.AutismVideosActivity"
+            android:theme="@style/Theme.ICT4GS"/>
+        <activity android:name=".ui.training.AutismInfoActivity"
+            android:theme="@style/Theme.ICT4GS"/>
+
     </application>
 
 
