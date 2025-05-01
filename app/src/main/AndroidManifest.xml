@@ -40,6 +40,10 @@
         <activity android:name=".ui.training.AutismInfoActivity"
             android:theme="@style/Theme.ICT4GS"/>
 
+        <activity android:name=".ui.home.PostDetailActivity"
+            android:theme="@style/Theme.ICT4GS"/>
+
+
     </application>
 
 
