@@ -12,7 +12,7 @@
 
         <!-- Events Section -->
         <TextView
-            android:text="Upcoming Events"
+            android:text="@string/events"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginBottom="8dp"
@@ -28,7 +28,7 @@
 
         <!-- Forum Section -->
         <TextView
-            android:text="Forum"
+            android:text="@string/forum"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginBottom="8dp"
@@ -46,6 +46,6 @@
             android:id="@+id/newPostButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Write New Post"/>
+            android:text="@string/write_new_post"/>
     </LinearLayout>
 </ScrollView>

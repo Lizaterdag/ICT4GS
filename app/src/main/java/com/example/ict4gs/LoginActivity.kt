@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ict4gs.databinding.ActivityLoginBinding
+import androidx.core.content.edit
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -32,6 +33,10 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, "User not found. Please register first.", Toast.LENGTH_SHORT).show()
             } else if (savedPassword == password) {
                 Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
+
+                sharedPref.edit {
+                    putString("loggedInUser", username)
+                }
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             } else {

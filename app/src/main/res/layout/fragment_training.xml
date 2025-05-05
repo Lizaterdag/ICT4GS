@@ -23,7 +23,7 @@
 
             <TextView
                 android:layout_gravity="center"
-                android:text="Take an Autism Test"
+                android:text="@string/take_an_Autism_Test"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
@@ -43,7 +43,7 @@
 
             <TextView
                 android:layout_gravity="center"
-                android:text="Watch YouTube Videos"
+                android:text="@string/watch_youTube_videos"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
@@ -62,7 +62,7 @@
 
             <TextView
                 android:layout_gravity="center"
-                android:text="Learn About Autism"
+                android:text="@string/learn_about_autism"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_width="match_parent"

@@ -27,7 +27,7 @@
 
             <EditText
                 android:id="@+id/userInput"
-                android:hint="Type your message..."
+                android:hint="@string/type_your_message"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"

@@ -10,12 +10,12 @@
         android:id="@+id/titleInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Post Title"/>
+        android:hint="@string/post_title"/>
 
     <EditText
         android:id="@+id/contentInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Write your post..."
+        android:hint="@string/write_your_post"
         android:layout_marginTop="8dp"/>
 </LinearLayout>

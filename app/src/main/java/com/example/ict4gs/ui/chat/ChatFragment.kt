@@ -72,7 +72,7 @@ class ChatFragment : Fragment() {
         val json = JSONObject()
         json.put("model", "gpt-3.5-turbo")
         json.put("messages", JSONArray().apply {
-            put(JSONObject().put("role", "system").put("content", "You are a helpful autism advisor."))
+            put(JSONObject().put("role", "system").put("content", "You are a autism advisor. You help parents with autistic children with their problems and give them advice. Do only focus on autism."))
             put(JSONObject().put("role", "user").put("content", userMessage))
         })
 
