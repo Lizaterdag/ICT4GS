@@ -32,4 +32,21 @@
     <string name="save_changes">Save Changes</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="autism_info">Info on Autism</string>
+    <string name="send">Send</string>
+    <string name="advisor">Your Advisor</string>
+    <string name="cancel">Cancel</string>
+    <string name="post">Post</string>
+    <string name="new_forum_post">Create New Forum</string>
+    <string name="close">Close</string>
+    <string name="forum_post">Forum Post</string>
+    <string name="forum1_title">Best learning strategies for my child with nonverbal autism?</string>
+    <string name="forum1_content">My child has nonverbal autism and I am struggling to find way to support him with learning. Are there any suggestions?</string>
+    <string name="forum2_title">Any recommended therapists?</string>
+    <string name="forum2_content">I want my child to go to a therapist that is specialised in autism. I want her to be able to talk about...</string>
+    <string name="event1_title">Autism Awareness Day</string>
+    <string name="event1_date">10-05-2025</string>
+    <string name="event1_description">Join us for workshops and talks!</string>
+    <string name="event2_title">Parent Support Group</string>
+    <string name="event2_date">05-06-2025</string>
+    <string name="event2_description">Monthly meetup for parents</string>
 </resources>

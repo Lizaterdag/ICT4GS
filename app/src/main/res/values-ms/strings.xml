@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Nama Aplikasi</string>
+    <string name="username">Nama Pengguna</string>
+    <string name="password">Kata Laluan</string>
+    <string name="login">Log Masuk</string>
+    <string name="write_your_post">Tulis siaran anda...</string>
+    <string name="register">Daftar</string>
+    <string name="home">Rumah</string>
+    <string name="chat">Sembang</string>
+    <string name="training">Latihan</string>
+    <string name="profile">Profil</string>
+    <string name="language">Bahasa</string>
+    <string name="save_changes">Simpan Perubahan</string>
+    <string name="navigation_drawer_open">Buka laci navigasi</string>
+    <string name="navigation_drawer_close">Tutup laci navigasi</string>
+    <string name="action_settings">Tetapan</string>
+    <string name="menu_home">Rumah</string>
+    <string name="forum">Forum</string>
+    <string name="write_new_post">Tulis jawatan baharu</string>
+    <string name="events">Peristiwa</string>
+    <string name="learn_about_autism">Ketahui Mengenai Autisme</string>
+    <string name="watch_youTube_videos">Tonton Video Youtube</string>
+    <string name="take_an_Autism_Test">Ambil Ujian Autisme</string>
+    <string name="username_add">Nama pengguna:</string>
+    <string name="username_here">(nama pengguna di sini)</string>
+    <string name="type_your_message">Taip mesej anda...</string>
+    <string name="post_title">Tajuk Catatan</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="autism_info">Maklumat mengenai Autisme</string>
+    <string name="send">Hantar</string>
+    <string name="advisor">Penasihat anda</string>
+    <string name="cancel">Cancel</string>
+    <string name="post">Siaran Forum</string>
+    <string name="new_forum_post">Buat Forum Baharu</string>
+    <string name="close">Tutup</string>
+    <string name="forum_post">Siaran Forum</string>
+    <string name="forum1_title">Strategi pembelajaran terbaik untuk anak saya dengan autisme bukan lisan?</string>
+    <string name="forum1_content">Anak saya menghidap autisme bukan lisan dan saya sedang bergelut untuk mencari jalan untuk menyokongnya dalam pembelajaran. Adakah terdapat sebarang cadangan?</string>
+    <string name="forum2_title">Ada ahli terapi yang disyorkan?</string>
+    <string name="forum2_content">Saya mahu anak saya pergi ke ahli terapi yang pakar dalam autisme. Saya mahu dia boleh bercakap tentang...</string>
+    <string name="event1_title">Hari Kesedaran Autisme</string>
+    <string name="event1_date">10-05-2025</string>
+    <string name="event1_description">Sertai kami untuk bengkel dan ceramah!</string>
+    <string name="event2_title">Kumpulan Sokongan Ibu Bapa</string>
+    <string name="event2_date">05-06-2025</string>
+    <string name="event2_description">Pertemuan bulanan untuk ibu bapa</string>
+    <!-- Add the rest of your translations here -->
+</resources>
+

@@ -36,17 +36,40 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupEvents() {
-        events.add(Event("Autism Awareness Day", "10-05-2025", "Join us for workshops and talks."))
-        events.add(Event("Parent Support Group", "05-06-2025", "Monthly meetup for parents."))
+        events.add(
+            Event(
+                getString(R.string.event1_title),
+                getString(R.string.event1_date),
+                getString(R.string.event1_description)
+            )
+        )
+        events.add(
+            Event(
+                getString(R.string.event2_title),
+                getString(R.string.event2_date),
+                getString(R.string.event2_description)
+            )
+        )
 
         val adapter = EventAdapter(events)
         binding.eventsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.eventsRecyclerView.adapter = adapter
     }
 
+
     private fun setupForum() {
-        forumPosts.add(ForumPost( "Best learning strategies?", "What are some effective learning strategies for autistic students?"))
-        forumPosts.add(ForumPost( "Any recommended therapists?", "I think my child should see a therapist bla bal alb"))
+        forumPosts.add(
+            ForumPost(
+                getString(R.string.forum1_title),
+                getString(R.string.forum1_content)
+            )
+        )
+        forumPosts.add(
+            ForumPost(
+                getString(R.string.forum2_title),
+                getString(R.string.forum2_content)
+            )
+        )
 
         forumAdapter = ForumAdapter(forumPosts) { selectedPost ->
             val intent = Intent(requireContext(), PostDetailActivity::class.java).apply {
@@ -58,11 +81,12 @@ class HomeFragment : Fragment() {
         binding.forumRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.forumRecyclerView.adapter = forumAdapter
     }
+
     private fun showFullPostDialog(post: ForumPost) {
         AlertDialog.Builder(requireContext())
-            .setTitle("Forum Post")
+            .setTitle(getString(R.string.forum_post))
             .setMessage(post.content)
-            .setPositiveButton("Close", null)
+            .setPositiveButton(getString(R.string.close), null)
             .show()
     }
 
@@ -73,9 +97,9 @@ class HomeFragment : Fragment() {
         val contentInput = dialogView.findViewById<EditText>(R.id.contentInput)
 
         AlertDialog.Builder(requireContext())
-            .setTitle("New Forum Post")
+            .setTitle(getString(R.string.new_forum_post))
             .setView(dialogView)
-            .setPositiveButton("Post") { _, _ ->
+            .setPositiveButton(getString(R.string.post)) { _, _ ->
                 val title = titleInput.text.toString()
                 val content = contentInput.text.toString()
                 if (title.isNotEmpty() && content.isNotEmpty()) {
@@ -83,7 +107,7 @@ class HomeFragment : Fragment() {
                     forumAdapter.notifyItemInserted(forumPosts.size - 1)
                 }
             }
-            .setNegativeButton("Cancel", null)
+            .setNegativeButton(getString(R.string.cancel), null)
             .show()
     }
 

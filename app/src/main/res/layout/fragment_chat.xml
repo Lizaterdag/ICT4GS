@@ -1,47 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:id="@+id/scrollView">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <!-- 🔥 TOP BAR -->
+    <TextView
+        android:id="@+id/chatTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:background="?attr/colorPrimary"
+        android:textColor="@android:color/white"
+        android:padding="16dp"
+        android:text="@string/advisor"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"/>
 
-        <TextView
-            android:id="@+id/chatHistory"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:padding="8dp" />
+    <!-- 🔥 CHAT CONTENT -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical">
+            android:padding="16dp">
 
-            <EditText
-                android:id="@+id/userInput"
-                android:hint="@string/type_your_message"
-                android:layout_width="0dp"
-                android:layout_weight="1"
+            <TextView
+                android:id="@+id/chatHistory"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:imeOptions="actionSend"
-                android:singleLine="true"
-                android:maxLines="1"
-                android:inputType="text" />
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:padding="8dp" />
 
-            <Button
-                android:id="@+id/sendButton"
-                android:text="Send"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <EditText
+                    android:id="@+id/userInput"
+                    android:hint="@string/type_your_message"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionSend"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:inputType="text" />
+
+                <Button
+                    android:id="@+id/sendButton"
+                    android:text="@string/send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
         </LinearLayout>
-
-    </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
