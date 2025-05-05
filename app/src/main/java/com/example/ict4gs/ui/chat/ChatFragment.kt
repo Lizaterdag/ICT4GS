@@ -50,7 +50,7 @@ class ChatFragment : Fragment() {
 
         if (bottomNav != null) {
             globalLayoutListener = ViewTreeObserver.OnGlobalLayoutListener {
-                // ✅ Add a null check for binding to avoid crash
+
                 _binding?.let { bindingNonNull ->
                     val heightDiff = bindingNonNull.root.rootView.height - bindingNonNull.root.height
                     if (heightDiff > 200) {

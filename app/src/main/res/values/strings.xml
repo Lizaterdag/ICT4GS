@@ -49,4 +49,32 @@
     <string name="event2_title">Parent Support Group</string>
     <string name="event2_date">05-06-2025</string>
     <string name="event2_description">Monthly meetup for parents</string>
+    <string name="submit">Submit</string>
+    <string name="likert_never">Never</string>
+    <string name="likert_rarely">Rarely</string>
+    <string name="likert_sometimes">Sometimes</string>
+    <string name="likert_often">Often</string>
+    <string name="likert_always">Always</string>
+    <string name="result_low">Low likelihood of autism traits.</string>
+    <string name="result_moderate">Some autism traits observed. Consider consulting a specialist.</string>
+    <string name="result_high">High likelihood of autism traits. We recommend seeking a professional evaluation.</string>
+
+    <string name="question1">My child is a picky eater.</string>
+    <string name="question2">My child spending time alone.</string>
+    <string name="question3">My child to be more naive than his peers.</string>
+    <string name="question4">My child misunderstands instructions.</string>
+    <string name="question5">My child adapts to new situations.</string>
+    <string name="question6">My child communicates clearly and effectively.</string>
+    <string name="question7">My child finds it difficult to make eye contact.</string>
+    <string name="question8">My child is highly empathetic toward others.</string>
+
+    <string name="please_answer_all">Please answer all questions.</string>
+    <string name="test_result">Test Result</string>
+    <string name="your_score">Your score: %1$d</string>
+    <string name="one_two_three">1 = Never, 2 = Rarely, 3 = Sometimes, 4 = Often, 5 = Always</string>
+    <string name="next">Next</string>
+    <string name="autism_test">Autism Test</string>
+    <string name="autism_info_title">What is Autism?</string>
+    <string name="autism_info_content">Autism, or autism spectrum disorder (ASD), refers to a broad range of conditions characterized by challenges with social skills, repetitive behaviors, speech and nonverbal communication. The prevalence of ASD among school- aged children in Malaysia increases significantly over the five-year period from 2018 to 2022. In 2018, the prevalence was 6.34 per 1,000 children (1 in 158 children), which increased significantly to 9.29 per 1,000 children (1 in 108 children) in 2022. Autism looks different for everyone, and each person with autism has a distinct set of strengths and challenges. Some autistic people can speak, while others are nonverbal or minimally verbal and communicate in other ways. Some have intellectual disabilities, while some do not. Some require significant support in their daily lives, while others need less support and, in some cases, live entirely independently.</string>
+
 </resources>

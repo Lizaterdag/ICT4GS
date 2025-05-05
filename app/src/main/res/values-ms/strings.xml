@@ -44,6 +44,31 @@
     <string name="event2_title">Kumpulan Sokongan Ibu Bapa</string>
     <string name="event2_date">05-06-2025</string>
     <string name="event2_description">Pertemuan bulanan untuk ibu bapa</string>
+    <string name="submit">Hantar</string>
+    <string name="likert_never">Tidak Pernah</string>
+    <string name="likert_rarely">Jarang</string>
+    <string name="likert_sometimes">Kadang-kadang</string>
+    <string name="likert_often">Selalu</string>
+    <string name="likert_always">Sentiasa</string>
+    <string name="result_low">Kebarangkalian rendah ciri autisme.</string>
+    <string name="result_moderate">Beberapa ciri autisme diperhatikan. Pertimbangkan untuk berunding dengan pakar.</string>
+    <string name="result_high">Kebarangkalian tinggi ciri autisme. Kami mengesyorkan penilaian profesional.</string>
+    <string name="question1">Anak saya seorang yang cerewet makan.</string>
+    <string name="question2">Anak saya menghabiskan masa bersendirian.</string>
+    <string name="question3">Anak saya menjadi lebih naif daripada rakan sebayanya.</string>
+    <string name="question4">Anak saya salah faham arahan.</string>
+    <string name="question5">Anak saya menyesuaikan diri dengan situasi baru.</string>
+    <string name="question6">Anak saya berkomunikasi dengan jelas dan berkesan.</string>
+    <string name="question7">Anak saya sukar untuk bertentang mata.</string>
+    <string name="question8">Anak saya sangat empati terhadap orang lain.</string>
+    <string name="please_answer_all">Sila jawab semua soalan.</string>
+    <string name="test_result">Keputusan Ujian</string>
+    <string name="your_score">Markah anda: %1$d</string>
+    <string name="one_two_three">1 = Tidak Pernah, 2 = Jarang, 3 = Kadang-kadang, 4 = Selalu, 5 = Sentiasa</string>
+    <string name="next">Seterusnya</string>
+    <string name="autism_test">Ujian Autisme</string>
+    <string name="autism_info_title">Apa itu Autisme?</string>
+    <string name="autism_info_content">Autisme, atau gangguan spektrum autisme (ASD), merujuk kepada pelbagai keadaan yang dicirikan oleh cabaran dengan kemahiran sosial, tingkah laku berulang, pertuturan dan komunikasi bukan lisan. Kelaziman ASD dalam kalangan kanak-kanak berumur sekolah di Malaysia meningkat dengan ketara dalam tempoh lima tahun dari 2018 hingga 2022. Pada 2018, kelaziman adalah 6.34 bagi setiap 1,000 kanak-kanak (1 dalam 158 kanak-kanak), yang meningkat dengan ketara kepada 9.29 bagi setiap 1,000 kanak-kanak (1 dalam 1208 kanak-kanak) yang berbeza (1 dalam 1208 kanak-kanak) dengan autisme mempunyai satu set kekuatan dan cabaran yang berbeza. Sesetengah orang autistik boleh bercakap, manakala yang lain adalah bukan lisan atau lisan yang minimum dan berkomunikasi dengan cara lain. Ada yang kurang upaya intelek, ada yang tidak. Ada yang memerlukan sokongan yang ketara dalam kehidupan seharian mereka, manakala yang lain memerlukan kurang sokongan dan, dalam beberapa kes, hidup sepenuhnya berdikari.</string>
     <!-- Add the rest of your translations here -->
 </resources>
 
