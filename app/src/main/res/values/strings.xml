@@ -76,5 +76,6 @@
     <string name="autism_test">Autism Test</string>
     <string name="autism_info_title">What is Autism?</string>
     <string name="autism_info_content">Autism, or autism spectrum disorder (ASD), refers to a broad range of conditions characterized by challenges with social skills, repetitive behaviors, speech and nonverbal communication. The prevalence of ASD among school- aged children in Malaysia increases significantly over the five-year period from 2018 to 2022. In 2018, the prevalence was 6.34 per 1,000 children (1 in 158 children), which increased significantly to 9.29 per 1,000 children (1 in 108 children) in 2022. Autism looks different for everyone, and each person with autism has a distinct set of strengths and challenges. Some autistic people can speak, while others are nonverbal or minimally verbal and communicate in other ways. Some have intellectual disabilities, while some do not. Some require significant support in their daily lives, while others need less support and, in some cases, live entirely independently.</string>
+    <string name="please_fill_all">Please fill in all enteries</string>
 
 </resources>

@@ -89,6 +89,8 @@ class ChatFragment : Fragment() {
         binding.scrollView.post { binding.scrollView.fullScroll(View.FOCUS_DOWN) }
     }
 
+    //TODO: Add speech conversation
+
     private fun sendToLLM(userMessage: String) {
         val json = JSONObject()
         json.put("model", "gpt-3.5-turbo")

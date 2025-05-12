@@ -25,7 +25,7 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
 
         val sharedPref = requireContext().getSharedPreferences("UserCredentials", Context.MODE_PRIVATE)
-        val currentUsername = sharedPref.getString("loggedInUser", "(No user)")  // You need to save this at login!
+        val currentUsername = sharedPref.getString("loggedInUser", "(No user)")
 
         binding.usernameText.text = currentUsername
 

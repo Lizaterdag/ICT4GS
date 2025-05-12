@@ -30,8 +30,6 @@ class AutismTestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_autism_test)
 
-
-        // ✅ Build questions from string resources
         questions = listOf(
             Question(getString(R.string.question1), true),
             Question(getString(R.string.question2), true),
@@ -43,15 +41,12 @@ class AutismTestActivity : AppCompatActivity() {
             Question(getString(R.string.question8), false)
         )
 
-        // ✅ Find your views from the XML
         questionText = findViewById(R.id.questionText)
         radioGroup = findViewById(R.id.radioGroup)
         nextButton = findViewById(R.id.nextButton)
 
-        // ✅ Load the first question
         loadQuestion()
 
-        // ✅ Set the button click
         nextButton.setOnClickListener {
             val selectedId = radioGroup.checkedRadioButtonId
             if (selectedId == -1) {

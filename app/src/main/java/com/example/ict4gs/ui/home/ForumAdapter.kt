@@ -21,6 +21,8 @@ class ForumAdapter(
         return ForumViewHolder(view)
     }
 
+    //TODO: people can reply on forums
+
     override fun onBindViewHolder(holder: ForumViewHolder, position: Int) {
         val post = posts[position]
         holder.titleText.text = post.title
