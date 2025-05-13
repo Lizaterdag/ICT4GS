@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.ict4gs.ui.theme.ICT4GSTheme
 import androidx.core.content.edit
+import androidx.tv.material3.OutlinedButtonDefaults
 
 class LoginActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,7 +79,7 @@ fun LoginScreen(onLoginSuccess: () -> Unit, sharedPref: android.content.SharedPr
             onValueChange = { username = it },
             label = { Text("Username") },
             modifier = Modifier.fillMaxWidth(),
-
+            colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Color.White)
         )
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -88,8 +89,8 @@ fun LoginScreen(onLoginSuccess: () -> Unit, sharedPref: android.content.SharedPr
             onValueChange = { password = it },
             label = { Text("Password") },
             visualTransformation = PasswordVisualTransformation(),
-            modifier = Modifier.fillMaxWidth()
-
+            modifier = Modifier.fillMaxWidth(),
+            colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Color.White)
         )
 
         Spacer(modifier = Modifier.height(24.dp))
@@ -114,7 +115,7 @@ fun LoginScreen(onLoginSuccess: () -> Unit, sharedPref: android.content.SharedPr
             modifier = Modifier
                 .fillMaxWidth()
                 .height(50.dp),
-            shape = RoundedCornerShape(12.dp)
+            shape = RoundedCornerShape(12.dp),
         ) {
             Text("Login")
         }

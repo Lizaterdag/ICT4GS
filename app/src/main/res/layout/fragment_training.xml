@@ -20,13 +20,14 @@
             android:layout_marginBottom="16dp"
             android:clickable="true"
             android:focusable="true"
+            app:cardBackgroundColor="#DEFAF4"
             app:cardElevation="4dp"
             app:cardCornerRadius="12dp">
 
             <TextView
                 android:layout_gravity="center"
                 android:text="@string/take_an_Autism_Test"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -42,12 +43,13 @@
             android:clickable="true"
             android:focusable="true"
             app:cardElevation="4dp"
+            app:cardBackgroundColor="#DEFAF4"
             app:cardCornerRadius="12dp">
 
             <TextView
                 android:layout_gravity="center"
                 android:text="@string/watch_youTube_videos"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -63,12 +65,13 @@
             android:clickable="true"
             android:focusable="true"
             app:cardElevation="4dp"
+            app:cardBackgroundColor="#DEFAF4"
             app:cardCornerRadius="12dp">
 
             <TextView
                 android:layout_gravity="center"
                 android:text="@string/learn_about_autism"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

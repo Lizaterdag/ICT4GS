@@ -82,7 +82,7 @@ fun HomeScreen() {
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp),
+                .padding(0.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             // Title block for Events
@@ -114,7 +114,7 @@ fun HomeScreen() {
                 Spacer(modifier = Modifier.height(8.dp))
                 Button(
                     onClick = { showDialog = true },
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth().padding(16.dp)
                 ) {
                     Text(stringResource(R.string.write_new_post))
                 }
@@ -122,19 +122,29 @@ fun HomeScreen() {
         }
 
         // Alert Dialog for selected post
-        selectedPost?.let { post ->
-            AlertDialog(
-                onDismissRequest = { selectedPost = null },
-                confirmButton = {
-                    TextButton(onClick = { selectedPost = null }) {
-                        Text(stringResource(R.string.close))
-                    }
-                },
-                title = { Text(post.title) },
-                text = { Text(post.content) }
-            )
-        }
+    selectedPost?.let { post ->
+        AlertDialog(
+            onDismissRequest = { selectedPost = null },
+            confirmButton = {
+                TextButton(onClick = { selectedPost = null }) {
+                    Text(stringResource(R.string.close))
+                }
+            },
+            title = { Text(post.title) },
+            text = { Text(post.content) }
+        )
     }
+    if (showDialog) {
+        NewPostDialog(
+            onDismiss = { showDialog = false },
+            onPost = { title, content ->
+                forumPosts = forumPosts + ForumPost(title, content)
+                showDialog = false
+            }
+        )
+    }
+}
+
 
 @Composable
 fun EventCard(event: Event) {
@@ -169,7 +179,6 @@ fun ForumCard(post: ForumPost, onClick: () -> Unit) {
         }
     }
 }
-
 
 @Composable
 fun NewPostDialog(onDismiss: () -> Unit, onPost: (String, String) -> Unit) {
