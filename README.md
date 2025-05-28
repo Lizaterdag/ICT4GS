@@ -19,3 +19,4 @@ https://drive.google.com/drive/folders/1PEeBN-xdzDD5nlYxni5pc0XG7GY55hue
 
 ## Survey
 https://docs.google.com/forms/d/e/1FAIpQLSeImIpVMoOUog3TbOBONCfObhbUg2eF5B22P-tY-jlkYpfPrw/viewform?usp=dialog
+Survey responses can be found in analysis/survey_responses.csv
